@@ -6,7 +6,7 @@ import streamlit as st
 import zipfile
 import os
 import shutil
-
+import requests
 
 def upload_myfile(content, token, repo_name, username = 'jrhumberto'):
     # Cria o repositório
