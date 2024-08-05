@@ -8,7 +8,7 @@ import os
 import shutil
 import requests
 
-def upload_myfile(content, token, repo_name, username = 'jrhumberto'):
+def upload_myfile(file_content, token, repo_name, username = 'jrhumberto'):
     # Cria o repositório
     url = 'https://api.github.com/user/repos'
     headers = {'Authorization': f'token {token}'}
@@ -63,7 +63,7 @@ if uploaded_file is not None:
             # st.text(os.path.join(root, filename))
             with open(os.path.join(root, filename), 'rb') as file:
                 content = file.read()
-                upload_myfile(content=content, token=chave, repo_name=repositorio)
+                upload_myfile(file_content=content, token=chave, repo_name=repositorio)
                 st.text(f'{filename}')
             
     shutil.rmtree('tempDir')
