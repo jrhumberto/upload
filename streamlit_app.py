@@ -13,8 +13,8 @@ def save_uploadedfile(uploadedfile):
     return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 st.title("Aplicativo de Descompactação de Arquivos Zip")
-chave = st.text_input('Digite um valor suficiente para o upload')
-repositorio = st.text_input('Digite um valor suficiente para o upload')
+chave = st.text_input("Digite um valor suficiente para o upload")
+repositorio = st.text_input("Digite um valor suficiente para o upload")
 uploaded_file = st.file_uploader("Escolha um arquivo zip", type="zip")
 if uploaded_file is not None:
     if not os.path.exists('tempDir'):
@@ -28,6 +28,6 @@ if uploaded_file is not None:
             st.text(os.path.join(root, filename))
     shutil.rmtree('tempDir')
 #
-if st.button('upload'):
+if st.button("upload"):
     st.write('Conseguimos')
     st.text('E agora?')
