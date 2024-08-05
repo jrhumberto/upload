@@ -61,9 +61,10 @@ if uploaded_file is not None:
     for root, dirs, files in os.walk("tempDir"):
         for filename in files:
             # st.text(os.path.join(root, filename))
-            content = filename.getvalue()
-            upload_myfile(content=content, token=chave, repo_name=repositorio)
-            st.text(f'{filename}')
+            with open(os.path.join(root, filename), 'rb') as file:
+                content = file.read()
+                upload_myfile(content=content, token=chave, repo_name=repositorio)
+                st.text(f'{filename}')
             
     shutil.rmtree('tempDir')
 #
