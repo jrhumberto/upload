@@ -14,7 +14,7 @@ def save_uploadedfile(uploadedfile):
 
 st.title("Aplicativo de Descompactação de Arquivos Zip")
 chave = st.text_input("Digite um valor suficiente para o upload")
-repositorio = st.text_input("Digite um valor suficiente para o upload")
+repositorio = st.text_input("Coloque um repositorio para o upload")
 uploaded_file = st.file_uploader("Escolha um arquivo zip", type="zip")
 if uploaded_file is not None:
     if not os.path.exists('tempDir'):
